@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: producer
+spec:
+  selector:
+    matchLabels:
+      app: producer
+  template:
+    metadata:
+      labels:
+        app: producer
+    spec:
+      containers:
+      - name: producer
+        image: piomin/producer
+        resources:
+          requests:
+            memory: 200Mi
+            cpu: 100m
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,11 @@
+apiVersion: skaffold/v4beta5
+kind: Config
+metadata:
+  name: producer
+build:
+  artifacts:
+    - image: piomin/producer
+      jib: {}
+manifests:
+  rawYaml:
+    - k8s/**.yaml
