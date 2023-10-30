@@ -1,0 +1,18 @@
+apiVersion: skaffold/v4beta5
+kind: Config
+metadata:
+  name: kafka-kubernetes
+build:
+  artifacts:
+    - image: piomin/consumer
+      jib:
+        project: consumer
+    - image: piomin/producer
+      jib:
+        project: producer
+manifests:
+  rawYaml:
+    - consumer/k8s/*.yaml
+    - producer/k8s/*.yaml
+deploy:
+  kubectl: {}
