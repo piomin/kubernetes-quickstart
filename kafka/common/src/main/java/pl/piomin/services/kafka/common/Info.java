@@ -1,4 +1,4 @@
-package pl.piomin.services.kafka.consumer.message;
+package pl.piomin.services.kafka.common;
 
 public class Info {
 
@@ -7,6 +7,8 @@ public class Info {
     private String space;
     private String cluster;
     private String message;
+
+    public Info() { }
 
     public Info(Long id, String source, String space, String cluster, String message) {
         this.id = id;
@@ -54,5 +56,16 @@ public class Info {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "Info{" +
+                "id=" + id +
+                ", source='" + source + '\'' +
+                ", space='" + space + '\'' +
+                ", cluster='" + cluster + '\'' +
+                ", message='" + message + '\'' +
+                '}';
     }
 }

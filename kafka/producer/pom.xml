@@ -12,4 +12,12 @@
 
     <artifactId>producer</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>pl.piomin.services</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>

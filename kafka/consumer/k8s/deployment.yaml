@@ -20,3 +20,8 @@ spec:
             cpu: 100m
         ports:
         - containerPort: 8080
+        env:
+          - name: TOPIC
+            value: test-1
+          - name: KAFKA_URL
+            value: kafka

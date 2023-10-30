@@ -9,14 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>consumer</artifactId>
+    <artifactId>common</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>pl.piomin.services</groupId>
-            <artifactId>common</artifactId>
-            <version>${project.parent.version}</version>
-        </dependency>
-    </dependencies>
 
 </project>

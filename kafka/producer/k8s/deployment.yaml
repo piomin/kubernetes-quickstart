@@ -20,3 +20,18 @@ spec:
             cpu: 100m
         ports:
         - containerPort: 8080
+        env:
+          - name: KAFKA_URL
+            value: kafka
+          - name: CLUSTER
+            value: c1
+          - name: TOPIC
+            value: test-1
+          - name: POD
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
