@@ -16,3 +16,10 @@ manifests:
     - producer/k8s/*.yaml
 deploy:
   kubectl: {}
+profiles:
+  - name: kafka-strimzi
+    manifests:
+      rawYaml:
+        - consumer/k8s/*.yaml
+        - producer/k8s/*.yaml
+        - k8s/kafka-*.yaml
