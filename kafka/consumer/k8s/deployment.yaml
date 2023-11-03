@@ -24,4 +24,4 @@ spec:
           - name: TOPIC
             value: test-1
           - name: KAFKA_URL
-            value: kafka
+            value: my-cluster-kafka-bootstrap

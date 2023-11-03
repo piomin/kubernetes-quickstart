@@ -22,7 +22,7 @@ spec:
         - containerPort: 8080
         env:
           - name: KAFKA_URL
-            value: kafka
+            value: my-cluster-kafka-bootstrap
           - name: CLUSTER
             value: c1
           - name: TOPIC
