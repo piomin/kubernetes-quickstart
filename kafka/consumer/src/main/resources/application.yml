@@ -8,4 +8,13 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
 
-app.in.topic: ${TOPIC:my-topic}
+app.in.topic: ${TOPIC:info}
+
+management:
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: http://jaeger:4318/v1/traces

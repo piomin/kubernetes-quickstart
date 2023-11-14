@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  broker:
+    image: moeenz/docker-kafka-kraft:latest
+    restart: always
+    ports:
+      - "9092:9092"
+    environment:
+      - KRAFT_CONTAINER_HOST_NAME=broker
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - "16686:16686"
+      - "4317:4317"
+      - "4318:4318"
+  producer:
+    image: library/producer:1.0-SNAPSHOT
+    links:
+      - broker
+      - jaeger
+    environment:
+      MANAGEMENT_OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: broker:9092
+  consumer:
+    image: library/consumer:1.0-SNAPSHOT
+    links:
+      - broker
+      - jaeger
+    environment:
+      MANAGEMENT_OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: broker:9092
