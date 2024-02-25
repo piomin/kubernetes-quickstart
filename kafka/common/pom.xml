@@ -11,5 +11,8 @@
 
     <artifactId>common</artifactId>
 
+    <properties>
+        <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
+    </properties>
 
 </project>

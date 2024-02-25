@@ -11,6 +11,10 @@
 
     <artifactId>consumer</artifactId>
 
+    <properties>
+        <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>pl.piomin.services</groupId>
