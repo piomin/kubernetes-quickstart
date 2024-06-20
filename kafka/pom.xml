@@ -20,7 +20,7 @@
     </modules>
 
     <properties>
-        <spring-boot.version>3.3.0</spring-boot.version>
+        <spring-boot.version>3.3.1</spring-boot.version>
         <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
     </properties>
 
