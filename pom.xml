@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>kafka</module>
+        <module>volumes</module>
     </modules>
 
     <properties>

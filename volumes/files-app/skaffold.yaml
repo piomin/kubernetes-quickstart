@@ -1,0 +1,11 @@
+apiVersion: skaffold/v4beta5
+kind: Config
+metadata:
+  name: first-app
+build:
+  artifacts:
+    - image: piomin/first-app
+      jib: {}
+manifests:
+  rawYaml:
+    - k8s/**.yaml

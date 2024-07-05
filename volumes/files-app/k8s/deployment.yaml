@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: files-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: files-app
+  template:
+    metadata:
+      labels:
+        app: files-app
+    spec:
+      containers:
+      - name: files-app
+        image: piomin/files-app
+        resources:
+          requests:
+            memory: 200Mi
+            cpu: 100m
+        ports:
+        - containerPort: 8080
+        env:
+          - name: MOUNT_PATH
+            value: /mount/data
+        volumeMounts:
+          - name: data
+            mountPath: /mount/data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: data
+      nodeSelector:
+        color: blue
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: files-app
+spec:
+  selector:
+    app: files-app
+  ports:
+  - port: 8080
+    protocol: TCP
+    name: http
+  type: ClusterIP
