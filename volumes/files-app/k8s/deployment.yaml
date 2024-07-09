@@ -12,9 +12,16 @@ spec:
       labels:
         app: files-app
     spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions: [ { key: app, operator: In, values: [ files-app ] } ]
+              topologyKey: "kubernetes.io/hostname"
       containers:
       - name: files-app
-        image: piomin/files-app
+        image: piomin/files-app:latest
+        imagePullPolicy: Always
         resources:
           requests:
             memory: 200Mi
@@ -31,8 +38,6 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: data
-      nodeSelector:
-        color: blue
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -40,7 +45,7 @@ metadata:
   name: data
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 1Gi
