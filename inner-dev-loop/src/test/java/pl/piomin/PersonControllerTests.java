@@ -65,7 +65,8 @@ public class PersonControllerTests {
     @Order(4)
     void deleteAndGet() {
         restTemplate.delete("/persons/{id}", 1);
-        assertThrows(NoSuchElementException.class, () -> restTemplate.getForObject("/persons/{id}", Person.class, 1));
+        Person p = restTemplate.getForObject("/persons/{id}", Person.class, 1);
+        assertNull(p.getId());
     }
 
 }
