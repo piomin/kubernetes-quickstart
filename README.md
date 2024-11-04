@@ -10,6 +10,7 @@ In order to easily run the apps directly from the source you need to install `sk
 
 I'm using those apps in the several articles on my blog. Here's the list:
 1. How to run and manage Kafka on Kubernetes with the Strimzi operator. We run two simple apps for sending messages (`kafka/producer`) and receiving them for Kafka topic (`kafka/consumer`). A detailed guide may be found in the following article: [Apache Kafka on Kubernetes with Strimzi](https://piotrminkowski.com/2023/11/06/apache-kafka-on-kubernetes-with-strimzi/)
+2. How to use JKube to generate Kubernetes resources and build images. A detailed guide may be found in the following article: [Spring Boot on Kubernetes with Eclipse JKube](https://piotrminkowski.com/2024/10/03/spring-boot-on-kubernetes-with-eclipse-jkube/)
 
 
 ## Usage

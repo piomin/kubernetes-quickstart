@@ -21,7 +21,7 @@ public class PersonController {
 
     @GetMapping
     public List<Person> getAll() {
-        LOG.info("Get all persons");
+        LOG.info("Get all person");
         return (List<Person>) repository.findAll();
     }
 

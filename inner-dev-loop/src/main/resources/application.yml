@@ -12,6 +12,9 @@ spring:
       hibernate:
         show_sql: true
         format_sql: true
+  devtools:
+    remote:
+      secret: abc123
 
 management:
   info.java.enabled: true
