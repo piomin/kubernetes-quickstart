@@ -12,6 +12,7 @@
         <module>kafka</module>
         <module>volumes</module>
         <module>inner-dev-loop</module>
+        <module>basic</module>
     </modules>
 
     <properties>
