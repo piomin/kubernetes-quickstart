@@ -13,6 +13,7 @@
         <module>volumes</module>
         <module>inner-dev-loop</module>
         <module>basic</module>
+        <module>outer-dev-loop</module>
     </modules>
 
     <properties>
