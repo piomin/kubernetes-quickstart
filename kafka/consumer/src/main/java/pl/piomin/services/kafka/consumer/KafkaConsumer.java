@@ -7,13 +7,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.kafka.annotation.EnableKafka;
-import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.config.TopicBuilder;
-import org.springframework.kafka.core.ConsumerFactory;
 
 @SpringBootApplication
-@EnableKafka
 public class KafkaConsumer {
 
     private static final Logger LOG = LoggerFactory.getLogger(KafkaConsumer.class);
@@ -24,15 +20,6 @@ public class KafkaConsumer {
 
     @Value("${app.in.topic}")
     private String topic;
-
-    @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, String> listenerFactory(ConsumerFactory<String, String> consumerFactory) {
-        ConcurrentKafkaListenerContainerFactory<String, String> factory =
-                new ConcurrentKafkaListenerContainerFactory<>();
-        factory.getContainerProperties().setObservationEnabled(true);
-        factory.setConsumerFactory(consumerFactory);
-        return factory;
-    }
 
     @Bean
     public NewTopic infoTopic() {

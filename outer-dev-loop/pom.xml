@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.10</version>
+        <version>4.0.2</version>
         <relativePath />
     </parent>
 
@@ -15,7 +15,7 @@
     <version>1.0</version>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>25</java.version>
         <testcontainers.version>1.19.7</testcontainers.version>
         <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
     </properties>
@@ -56,6 +56,21 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-testcontainers</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-resttestclient</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-restclient-test</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

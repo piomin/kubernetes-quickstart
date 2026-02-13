@@ -1,5 +1,6 @@
 spring:
   kafka:
+    bootstrap-servers: ${spring.embedded.kafka.brokers}
     producer:
       key-serializer: org.apache.kafka.common.serialization.LongSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

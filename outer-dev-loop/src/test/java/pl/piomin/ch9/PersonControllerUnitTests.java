@@ -1,14 +1,14 @@
 package pl.piomin.ch9;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.instancio.Instancio;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
-import org.testcontainers.shaded.com.fasterxml.jackson.databind.ObjectMapper;
 import pl.piomin.ch9.controller.PersonController;
 import pl.piomin.ch9.domain.Person;
 import pl.piomin.ch9.repository.PersonRepository;
@@ -28,7 +28,7 @@ public class PersonControllerUnitTests {
 
     @Autowired
     MockMvc mvc;
-    @MockBean
+    @MockitoBean
     PersonRepository repository;
 
     @Test
